@@ -4,7 +4,7 @@ This project is a simple Flask application that generates a random password base
 
 ## Installation
 
-To run this project, you will need to have [Flask](https://palletsprojects.com/p/flask/) installed. You can install it using pip:
+To run this project, you will need to have [Flask](https://flask.palletsprojects.com/en/3.0.x/) installed. You can install it using pip:
 
 ```bash
 pip install flask
