@@ -22,17 +22,17 @@ def generate_password(password_length, include_uppercase, include_lowercase, inc
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        password_length = int(request.form.get('password_length', 10))  # default password length is 10
+        password_length = int(request.form.get('length', 10))  # default password length is 10
         include_uppercase = request.form.get('uppercase', False)
         include_lowercase = request.form.get('lowercase', False)
         include_numbers = request.form.get('numbers', False)
         include_special_chars = request.form.get('special_chars', False)
 
-        password = generate_password(password_length, include_uppercase, include_lowercase, include_numbers,
+        password = generate_password(password_length, include_uppercase,
+                                     include_lowercase, include_numbers,
                                      include_special_chars)
 
-        # Return a dictionary with the password
-        return {'password': password}
+        return render_template('index.html', password=password, password_length=password_length)
 
     return render_template('index.html')
 
