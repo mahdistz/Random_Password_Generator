@@ -23,10 +23,10 @@ def generate_password(password_length, include_uppercase, include_lowercase, inc
 def home():
     if request.method == 'POST':
         password_length = int(request.form.get('length', 10))  # default password length is 10
-        include_uppercase = request.form.get('uppercase', False)
-        include_lowercase = request.form.get('lowercase', False)
-        include_numbers = request.form.get('numbers', False)
-        include_special_chars = request.form.get('special_chars', False)
+        include_uppercase = request.form.get('uppercase')
+        include_lowercase = request.form.get('lowercase')
+        include_numbers = request.form.get('numbers')
+        include_special_chars = request.form.get('special_chars')
 
         password = generate_password(password_length, include_uppercase,
                                      include_lowercase, include_numbers,
