@@ -38,7 +38,7 @@
 
 {% if password %}
 <div class="password-container">
-    <p class="password-label">Password is:</p>
+    <div id="passwordStrength" class="strength-{{ password_difficulty_score }}"> {{ password_difficulty_text }}</div>
     <div class="generated-password" id="password-box">{{ password }}</div>
     <button class="copy-button" onclick="copyPassword(this)">Copy</button>
 </div>

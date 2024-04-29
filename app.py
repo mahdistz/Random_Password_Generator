@@ -1,8 +1,17 @@
 from flask import Flask, render_template, request
 import random
 import string
+from zxcvbn import zxcvbn
 
 app = Flask(__name__)
+
+password_difficulty_text = {
+    0: 'Weak',
+    1: 'Medium',
+    2: 'Good',
+    3: 'Strong',
+    4: 'Very Strong'
+}
 
 
 def generate_password(password_length, include_uppercase, include_lowercase, include_numbers, include_special_chars):
@@ -28,11 +37,23 @@ def home():
         include_numbers = request.form.get('numbers')
         include_special_chars = request.form.get('special_chars')
 
-        password = generate_password(password_length, include_uppercase,
-                                     include_lowercase, include_numbers,
-                                     include_special_chars)
+        password = generate_password(
+            password_length,
+            include_uppercase,
+            include_lowercase,
+            include_numbers,
+            include_special_chars
+        )
 
-        return render_template('index.html', password=password, password_length=password_length)
+        difficulty_password_result = zxcvbn(password)
+        password_difficulty_score = difficulty_password_result['score']
+
+        return render_template('index.html',
+                               password=password,
+                               password_length=password_length,
+                               password_difficulty_score=password_difficulty_score,
+                               password_difficulty_text=password_difficulty_text[password_difficulty_score]
+                               )
 
     return render_template('index.html')
 

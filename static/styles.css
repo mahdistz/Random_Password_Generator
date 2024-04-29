@@ -1,3 +1,10 @@
+/* Password Strength Meter Colors */
+.strength-0 { background-color: #ff9999; } /* Weak */
+.strength-1 { background-color: #ffcc66; } /* Medium */
+.strength-2 { background-color: #ffff99; } /* Good */
+.strength-3 { background-color: #99ff99; } /* Strong */
+.strength-4 { background-color: #66ccff; } /* Very Strong */
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -24,7 +31,7 @@ label {
 
 input[type="number"],
 input[type="text"] {
-    width: 100%;
+    width: calc(100% - 22px); /* Adjust width to account for padding and border */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -65,10 +72,6 @@ input[type="submit"] {
     margin-top: 20px;
 }
 
-.password-label {
-    font-weight: bold;
-}
-
 .copy-button {
     display: inline-block;
     padding: 8px 16px;
@@ -79,4 +82,12 @@ input[type="submit"] {
     color: #fff;
     font-size: 14px;
     cursor: pointer;
+}
+
+#passwordStrength {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content; /* Adjust width to fit content */
+    margin-top: 10px; /* Add margin to separate from other content */
 }
