@@ -2,31 +2,39 @@
 
 This project is a simple Flask application that generates a random password based on user input. The user can specify
 the length of the password and whether to include uppercase letters, lowercase letters, numbers, and special characters.
+Additionally, the generated password difficulty is displayed below the password.
 
 ![Password_Generator](./photos/password_generator.png)
 
-## Installation
+**Features:**
 
-To run this project, you will need to have [Flask](https://flask.palletsprojects.com/en/3.0.x/) installed. You can
-install it using pip:
+- **Customizable Length:**   Decide your ideal password length (recommended minimum of 12 characters).
+- **Character Options:**   Select from uppercase, lowercase, numbers, and special characters for enhanced complexity.
+- **Difficulty Meter:**    Get a quick visual gauge of generated password strength.
 
-```bash
-pip install flask
-```
+**How to Use:**
 
-## Usage
+1. **Clone the Repository:**  Use Git to clone this repository to your local machine.
+2. **Set Up Virtual Environment:**  Activate a virtual environment to isolate project dependencies. Here's a guide for
+   creating a virtual environment:
+    - **Windows:**
+      ```bash
+      python -m venv venv
+      venv\Scripts\activate
+      ```
+    - **Linux:**
+      ```bash
+      python3 -m venv venv
+      source venv/bin/activate
+      ```
+3. **Install Dependencies:**  Install the required Python libraries using `pip`:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Run the App:**  Start the development server with:
+   ```bash
+   python app.py
+   ```
 
-1. Clone this repository to your local machine.
-2. Navigate to the project directory and run the following command to start the server:
-
-```bash
-python app.py
-```
-
-3. Open your web browser and go to `http://127.0.0.1:5000`.
-4. Fill out the form with your desired password settings.
-5. Click the "Generate Password" button to create a random password.
-
-## License
-
-This project is licensed under the MIT License.
+Now, you can visit `http://127.0.0.1:5000/` (or your local development server address) in your web browser to access the
+password generator.
