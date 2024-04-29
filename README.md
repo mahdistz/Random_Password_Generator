@@ -1,10 +1,14 @@
 # Flask Random Password Generator
 
-This project is a simple Flask application that generates a random password based on user input. The user can specify the length of the password and whether to include uppercase letters, lowercase letters, numbers, and special characters.
+This project is a simple Flask application that generates a random password based on user input. The user can specify
+the length of the password and whether to include uppercase letters, lowercase letters, numbers, and special characters.
+
+![Password_Generator](./photos/password_generator.png)
 
 ## Installation
 
-To run this project, you will need to have [Flask](https://flask.palletsprojects.com/en/3.0.x/) installed. You can install it using pip:
+To run this project, you will need to have [Flask](https://flask.palletsprojects.com/en/3.0.x/) installed. You can
+install it using pip:
 
 ```bash
 pip install flask
