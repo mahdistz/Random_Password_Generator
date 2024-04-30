@@ -31,7 +31,7 @@ def generate_password(password_length, include_uppercase, include_lowercase, inc
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        password_length = int(request.form.get('length', 10))  # default password length is 10
+        password_length = int(request.form.get('rangeInput', 10))  # default password length is 10
         include_uppercase = request.form.get('uppercase')
         include_lowercase = request.form.get('lowercase')
         include_numbers = request.form.get('numbers')

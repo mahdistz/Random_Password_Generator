@@ -18,11 +18,9 @@ function copyPassword(button) {
     var password = passwordElement.innerText;
 
     navigator.clipboard.writeText(password).then(function () {
-        button.innerText = 'Copied';
-        button.style.backgroundColor = '#5cb85c';
+        button.style.backgroundImage = '/static/images/tick.png';
         setTimeout(function () {
-            button.innerText = 'Copy';
-            button.style.backgroundColor = '#337ab7';
+            button.style.backgroundImage = '/static/images/copy.png';
         }, 2000);
     });
 }
